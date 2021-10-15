@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        
         TicTacToe = [
             {'first':'x','second':'o','third':'x'},
             {'first':'o','second':'x','third':'o'},
             {'first':'x','second':'o','third':'o'}
         ];
+        
     </script>
     <style>
         table, td, th {
@@ -29,5 +31,13 @@
             }
         </script>
     </table>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = att("sean", 21);
+        function att(name, age, major){
+            return "name is: " + name + "<br>age is: " + age + "<br>major is: "
+            + major;
+        }
+    </script>
 </body>
 </html>

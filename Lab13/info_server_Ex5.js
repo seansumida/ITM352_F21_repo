@@ -48,9 +48,10 @@ app.post("/process_form", function (request, response) {
         let qty = POST['quantity_textbox'];
         if (isNonNegativeInteger(qty)) {
             products[0]['total_sold'] += Number(qty);
-            response.send(`<h2>Thank you for purchasing ${qty} ${brand}. Your total is \$${qty * brand_price}!</h2> `);
+            response.redirect('receipt.html?quantity=' + qty); // build a query string for a GET request
         } else {
-            response.send(`<i>${qty} is not a valid quantity</i>`);
+            // response.send(`<i>${qty} is not a valid quantity</i>`);
+            response.redirect('order_page.html?error=Invalid%20Quantity&quantity_textbox=' + qty);
         }
     }
 });
